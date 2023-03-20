@@ -1,0 +1,92 @@
+program hello
+       implicit none
+
+
+      integer :: i         (dichiarazione del tioo di variabile. Ora ho dichiarato che i saraà un numero intero) (Ciò limita la programmazione: una variabile è vincolata) (in un programma fortran la dichiarazione delle variaboli deve sempre precedere l'utilizzo delle variabili stesse)
+    
+ double precision :: x (numero reale)
+ 
+ double complex :: z (numero complesso)
+
+ logical :: b
+
+  print*, "Hello world" (le stringhe vengono comrpese come in Python, tra i doppi apici)
+ 
+ i=5             (a questo punto possuamo ad esempio stampare i)
+  print*, i       (ad ogni commando aggiubto devo ricompilare)
+
+ x=5.0d0         (il 'd' ha lo stesso ruolo della E nelle calcolatrici, ovvero specifica l ordine di grandezza in base al numero idnicato dopo la d. Ad esempio d3 indica che l'ordine di grandezza è di 1000)
+ print*, x
+
+ z= (1.0d0,2.0d0)
+
+print*, z
+
+b = .true.
+print*, b
+b = .false.
+print*, b
+
+(supponiamo di aver dato un valore a una variabile. Come facciamo a stampare ciò i n un file?))
+
+
+i=37
+x=30.0d0
+
+open(unit=10,file="prova-out.txt", status="unkown")  
+con questo comando viene  crato un nuovo file e viene cokmpilato. Una cosa simile avveniva su python, dove una votla aperto un programma bisognava specificre se il file veniva aperto in lettura o in scruttura. qui si fa la stessa cosa con il comando status. Unit ci va semrpe per motivi che nonon ho apitp. bisogna metterci un numero maggiore di 10
+
+write(10, *) i,x       L'asterisco indica al compilatore che può compilare come gli pare. se voglio specificare qualcosa, devo scrivere il sgeuente
+
+write(10, '(I5)') i    significa 'stampoa un numero intero riservando a lui 5 spazi' 
+write(10, '(2I5)') i, 2*i
+write(10, '(I0.5,I5)')       per seprarare due tipi di programmazione di scrittura basta usare una virgola. l'operazione di scrivere 0.5 si chiama pudding. significa che io voglio che il mio nunero intero occupi tot spazi ma che questi spazi siano irmepiti dal numero 0
+close(10)
+
+write(10, '(I0.5,",",I5)')    con i dopi apici chiedo che tra i duie numeru ci sia dello spazio 
+
+
+xwrite(10, '(E8.3)')     notazione esponenziale, utile se non si conosce l'ordine di grandezza di qualcosa che non ho capito 
+
+! Qui ci sta un commento
+
+end program hello
+_______________________________________________________________________________________________________________________________________________________________________________________
+ program hello 
+character(len=20) :: ww      dichiara una stringa di lunghezza massimo 20 caratteri
+
+ww = "Hello world!"
+ print*, ww
+
+per i vettori, devo dichiarare il tipo dei suoi elementi.
+
+integer, dimension(3) :: vec       3 è il niemro di elementi all'interno dei vettori e integer è il tipo di elemtnenti che conintene 
+vec = (/1, 2, 3/)                  il vettore si dichiara così
+print*, vec(2)                     con questa scritturwa stampo il secondo elemento del vettore. La differenza con Python è che qui si comincia a contare da 1 e non da 0
+
+vec(1) = 7    con questo vcomando ho cambiato il primo coefficiente del vettore con il numero 8 
+
+integer, dimension(2,2) :: mat    !axes              questa è una matrice 2x2. Una matrice è un oggetto a due indici, i vettori sono ogggetti a un indice
+mat = reshape ((/1,2,3,4 /) , (/2,2/))             gli elementi della amtrice sono salvati in modo che gli elementi di una colonna sono contigui.
+print*, mat(1,2)
+
+mat= 2*mat            posso moltiplicare una matrice in qiesto modo 
+
+end program hello
+---------------------------------------------------------------------------
+integer, dimension(:), allocatable:: ll            con i due punbti indico che non so quale è la lunbghezza del vettore.   questo vettore lo voglio creare solo quando so qiale deve essere la sua lunghezza. questo procedimento si chiama allocazione. Si possono alocare anche matrici e non solo vettori
+
+allocate(ll(2))              a un certto pubnto, quaando so che lugnhezz deve avere, scrivo questo comando. 2 è lalunghezza
+
+deallocate(ll)              poi posso disallocarlo
+
+allocate(ll(5))            poi posso di nnuovo allocarlo con una lughezza diversa.
+
+ 
+------------------------------------------------------------------------------------------------------------------------------------
+gfortran -o prova.x  -ffpe-trap=0 prova.f90 (con -ffpe-trap=0 sto dicendo di bloccare tutto quando si va incontro a una divisione per 0)
+-clear per 'pulire'
+-Eseguire il programma da riga di comando: ./prova.x
+
+vedere contenutodi una cartella: list
+more: 

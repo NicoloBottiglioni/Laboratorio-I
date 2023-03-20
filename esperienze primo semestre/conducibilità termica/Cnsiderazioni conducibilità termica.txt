@@ -1,0 +1,37 @@
+CONDUCIBILITA' TERMICA
+
+-Considerazioni
+ 
+In questo esperimento è stato assunto che tutta l'energia fornita dal generatore venga trasmessa al sistema di raffreddamento: in altri termini, non vi è dissipazione di energia nell'aria.
+
+Come origine degli assi è stato scelto il primo foro. errore è stata presa la risoluzione del metro a nastro. Data l'assenza difluttuazioni, l'errore verrà diviso per sqrt(12)
+ 
+Errore  Volt: 0.1     preso questo errore perchè il valore segnatp sul generatore oscillava tra 10.2 e 10.3  (Errore=risoluzione strumentale)
+
+Errore Ampere: 0.01   ''          ''          ''	''	''	''	''	''	1.61 e 1.62   ''   	''	''	''
+
+All'interno dei fori  c'è olio, un ottimo conduttore
+
+per la sezione è sttao misurato il diamentro dei cilinri con un calibro ventesimale
+
+
+L'errore sulle y deve essere molto maggiore del coefficiente angolare del best fit pesato con l'errore sulle x. Se questa cpondizione non è rispettata, si invertono gli assi
+
+
+
+Non abbiamo preso come erroree sulla twmpersturs la deviazione st perchè: la misura della temperatura misurata passa dalla sbarra all'olio, dall'olio ai (termistori) sensori, dai sensori ai cavi, dai cavi ai un rilevatore; è ,olto  probabile che ci sia un errore sistematico e, prendendo la deviazione st su un elevato numero di misurazioni(quindi con un errore statistico molto  piccolo perchè esso scala come 1/sqrtN) è probavilee che l'effettivo valore della temperatura sia distante dal nostro valore stimato. 
+ Potrebbe succedere che a causa di errori sistematici il valore effettivo della temperatira potrebbe essere di tot gradi in più e che, con la deviazione st molto piccola, il misurando non rientri nell'intervallo da noi stimato.
+
+T0 è un parametro determinato dal fit. è l'intercetta con l'asse y 
+
+Rossa alluminio   Blu alluminio 
+
+
+
+Fa ben sperare il fatto che all' ultimo foro della temperatura le due temperature siano compatibili, dato che c'e l'acqua
+
+
+PRIMO FILE: prima colonna è l'alluminio e la seconda è il rame7ottone
+SECONDO FILE: prima dei 500 seondi è volato il sensore nel rame
+
+ALCUNI DATI SCARTATI perchè questi non erano all'equilibrio

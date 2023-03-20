@@ -1,0 +1,30 @@
+calibro palmer potrebbe essere scalibrato e avere un errore di scala. In caso, questo errore si toglie dalle misure
+
+Bilancia molto sensibile. Usare il buon senso per l'errore
+
+
+
+Avremo misure precise di volume ma non molto di massa
+
+
+
+sigma_y molto maggiore della derivata della funzione (in questo caso ro) moltiplicata per l'errore. Se non è rispettata questa condizione, si invertono gli assi e  al posto di ro il coefficiente angolare sarà 1/ro
+
+ALTEZZE
+
+I cilindri sono scabrive l'altezza può essere diversa. Si può definire l'altezza come una media, dato che le superfici di base sono scabre.
+
+
+ERRORE SCALA BILANCIA 0.006
+Poi le misure dei pesi oscillavano di 0.004, questa èvstata presa come incrtezza
+
+
+non ha senso che prima segni una cosa e poi ne segni un'altra. Si toglie l'errore di salca dalle misure e poi si usa su tutte l'incertezza più grande.  
+
+
+
+MISURE
+tutte le misure sono state prese con il palmen r, tranne l'altezza dei solidi di ottone, le quali erano troppo grandi per essere misurate con il palmenr. E' stato usato il calibro cinquantesimale.
+
+ERRORE MISURE
+come errore sulle singole misure è stata presa la risoluzione strumentale; alcune di esse fluttuano, dunque probabilmente verràfatta la deviazione std per calcolare l'incertezza.

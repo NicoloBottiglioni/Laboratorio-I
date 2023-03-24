@@ -1,0 +1,11 @@
+#angolo_di_rifrazione_asse_x    #angolo_di_incidenza_asse_y
+11  7
+26  17
+16  13
+9   6
+5   4
+15  10
+25  19
+13  9
+29  19
+3   4

@@ -39,7 +39,7 @@ print('fase portante', f2_hat, df2)
 print('costante di traslazione', k_hat, dk)
 
 #plot del grafico
-fig=plt.figure('battimenti')
+fig=plt.figure('battimenti prime colonna')
 ax1, ax2 = fig.subplots(2, 1, sharex=True, gridspec_kw=dict(height_ratios=[2, 1], hspace=0.05))
 
 #dimezziamo gli array

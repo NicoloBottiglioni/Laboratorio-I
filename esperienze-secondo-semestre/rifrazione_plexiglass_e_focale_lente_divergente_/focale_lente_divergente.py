@@ -4,34 +4,18 @@ from scipy.optimize import curve_fit
 
 
 #Dati sperimentali. p e q sono i valori che effettivamente abbiano misurato. a noi interessano invece i reciproci, 
-#che chiameremo inv_p e inv_q
-p = np.array([-10.1, -12.1, -7.2, -5.3, -4.9, -8.2, -6.6, -9.0, -11.4, -5.6 ])  #cm
-q = np.array([19.6, 30.5, 17.05, 9.9, 7.55, 18.55, 12.75, 22.1, 29.25, 10.5 ])
-sigma_p = np.full(p.shape, 0.5) #cm
-sigma_q = np.full(q.shape, 2.09)
+#che chiameremo inv_p e inv_q. Inoltre, convertiamo tutto in metri 
+p = np.array([-6.48, -8.57, -10.08, -11.51, -12.77, -13.34, -14.23, -14.67, -15.08, -15.30])/100  #metri
+q = np.array([9.66, 17.21, 18.13, 25.81, 33.59, 40.55, 44.48, 52.29, 58.00, 60.24])/100 #metri
+sigma_p = np.full(p.shape, 0.50)/100 #metri
+sigma_q = np.full(q.shape, 1.00)/100 #metri
 
 
-#2.0, 2.8, 3.35, 2.0, 1.35, 1.65, 3.05, 1.9, 2.25, 0.6, 2.1////////scartata: p-6.0  q 7.8,
-#------------------------------------------------------------------------------------------------------------------------------
 inv_p= 1/p
 inv_q= 1/q
 
 sigma_inv_q= sigma_p/(p**2)
 sigma_inv_p= sigma_q/(q**2)
-#------------------------------------------------------------------------------------------------------------------------------
-'''for i in range(10):
-    inv_p.append(1/p)
-
-for i in range(10):
-    inv_q.append(1/q)
-
-for i in range(10):
-    sp = sigma_p / ((p([i])) **2.0)
-    sigma_inv_p.append(sp)
-
-for i in range(10):
-    sq = sigma_q / ((p([i])) **2.0)
-    sigma_inv_q.append(sq)'''
 
 x=-inv_p
 y=inv_q
@@ -58,35 +42,36 @@ m_hat, Q_hat = popt
 #SULLA DIAGONALE DELLA MATRICE DI COVARIANZA CI SONO GLI ERRORI DEI PARAMETRI DEL FIT. DETERMINIAMOLI GRAZIE AL SEGUENTE COMANDO
 sigma_m, sigma_Q = np.sqrt(pcov.diagonal())
 
-#STAMPA DI CIO' CHE CI INTERESSA: RICORDARE CHE NOI VOGLIAMO LA DISTANZA FOCALE F, quindi poi domani bisogna modificare questo punto. 
+#STAMPA DI CIO' CHE CI INTERESSA 
 print(m_hat, sigma_m, 'potere diottrico 1/f:', Q_hat, sigma_Q)
 
-
-fig=plt.figure('Rifrazione Plexiglass', figsize=(10., 6.), dpi=100)
+#Procediamo alla costruzione del nostro grafico
+fig=plt.figure('focale di una divergente', figsize=(10., 6.), dpi=100)
 ax1, ax2 = fig.subplots(2, 1, sharex=True, gridspec_kw=dict(height_ratios=[2, 1], hspace=0.05))
 res= y - line(x, m_hat, Q_hat)
 
-ax1.errorbar(x, y, dy, dx, fmt='.', label='punti sperimentali')
-#xgrid = np.linspace(0.0, 10.0, 100)
-ax1.plot(x, line(x, *popt), label='Modello di best-fit')
+ax1.errorbar(x, y, dy, dx, fmt='.', label='punti sperimentali', color='blue')
+
+ax1.plot(x, line(x, *popt), label='Modello di best-fit', color='orange')
 # Setup the axes, grids and legend.
-ax1.set_ylabel('y [a. u.]')
+ax1.set_ylabel('1/q [m^-1]')
 ax1.grid(color='lightgray', ls='dashed')
 ax1.legend()
 # And now the residual plot, on the bottom panel.
-ax2.errorbar(x, res, dy, fmt='.')
+ax2.errorbar(x, res, dy, fmt='.', color='blue')
 # This will draw a horizontal line at y=0, which is the equivalent of the best-fit
 # model in the residual representation.
-ax2.plot(x, np.full(x.shape, 0.0))
+ax2.plot(x, np.full(x.shape, 0.0), color='orange')
 # Setup the axes, grids and legend.
-ax2.set_xlabel('x [a. u.]')
-ax2.set_ylabel('Residuals [a. u.]')
+ax2.set_xlabel('1/p [m^-1]')
+ax2.set_ylabel('Residui [m^-1]')
 ax2.grid(color='lightgray', ls='dashed')
 
 # The final touch to main canvas :-)
-plt.ylim(-0.06, 0.06)
+plt.ylim(-2.0, 2.0)
 fig.align_ylabels((ax1, ax2))
 
+#test del chi squared
 chisq = np.sum((((y - line(x, *popt)) / dy)**2))
 print(f'Chi quadro = {chisq :.1f}')
 X= np.sqrt(16)

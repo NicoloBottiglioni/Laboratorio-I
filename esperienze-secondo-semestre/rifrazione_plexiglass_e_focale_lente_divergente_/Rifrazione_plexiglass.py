@@ -53,7 +53,7 @@ ax1.errorbar(x, y, dy, dx, fmt='.', label='punti sperimentali')
 #xgrid = np.linspace(0.0, 10.0, 100)
 ax1.plot(x, line(x, *popt), label='Modello di best-fit')
 # Setup the axes, grids and legend.
-ax1.set_ylabel('y [a. u.]')
+ax1.set_ylabel('Distanza asse - raggio incidente [quadretti]')
 ax1.grid(color='lightgray', ls='dashed')
 ax1.legend()
 # And now the residual plot, on the bottom panel.
@@ -62,8 +62,8 @@ ax2.errorbar(x, res, dy, fmt='.')
 # model in the residual representation.
 ax2.plot(x, np.full(x.shape, 0.0))
 # Setup the axes, grids and legend.
-ax2.set_xlabel('x [a. u.]')
-ax2.set_ylabel('Residuals [a. u.]')
+ax2.set_xlabel('Distanza asse - raggio rifratto [quadretti]')
+ax2.set_ylabel('Residui [quadretti.]')
 ax2.grid(color='lightgray', ls='dashed')
 
 # The final touch to main canvas :-)

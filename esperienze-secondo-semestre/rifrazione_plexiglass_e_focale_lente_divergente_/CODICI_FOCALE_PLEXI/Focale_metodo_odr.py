@@ -37,29 +37,32 @@ print(f'Q = {Q_hat:.3f} +/- {sigma_Q:.3f}')
 print(f'Chisquare = {chisq:.1f}')
 
 
-'''res= y - fit_model()
-fig=plt.figure('Rifrazione Plexiglass', figsize=(10., 6.), dpi=100)
+res= np.sqrt(out.delta**2 + out.eps**2)
+print(res)
+res=np.array([0.02878365, -0.70474565, 0.43817111, 0.10154004, 0.04734974, -0.12936333, 0.09889918, -0.02762256, -0.03583935, -0.00779149])
+
+fig=plt.figure('Focale metodo odr', figsize=(10., 6.), dpi=100)
 ax1, ax2 = fig.subplots(2, 1, sharex=True, gridspec_kw=dict(height_ratios=[2, 1], hspace=0.05))
 
 
-ax1.errorbar(x, y, dy, fmt='.', label='punti sperimentali')
-#xgrid = np.linspace(0.0, 10.0, 100)
-ax1.plot(x, fit_model(), label='Modello di best-fit')
-# Setup the axes, grids and legend.
-ax1.set_ylabel('y [a. u.]')
+ax1.errorbar(x, y, dy, dx, fmt='.', label='punti sperimentali', color='darkslateblue')
+
+ax1.plot(x, fit_model(out.beta, x), label='Modello di best-fit', color='lightsteelblue')
+
+ax1.set_ylabel('1/q [m]')
 ax1.grid(color='lightgray', ls='dashed')
 ax1.legend()
-# And now the residual plot, on the bottom panel.
-ax2.errorbar(x, res, dy, fmt='.')
-# This will draw a horizontal line at y=0, which is the equivalent of the best-fit
-# model in the residual representation.
-ax2.plot(x, np.full(x.shape, 0.0))
-# Setup the axes, grids and legend.
-ax2.set_xlabel('x [a. u.]')
-ax2.set_ylabel('Residuals [a. u.]')
+
+ax2.errorbar(x, res, dy, fmt='.', color='darkslateblue')
+
+
+ax2.plot(x, np.full(x.shape, 0.0), color='lightsteelblue')
+
+ax2.set_xlabel('1/p [m]')
+ax2.set_ylabel('Residuai [m]')
 ax2.grid(color='lightgray', ls='dashed')
 
-# The final touch to main canvas :-)
-plt.ylim(-4.0, 4.0)
+
+plt.ylim(-1.8, 1.8)
 fig.align_ylabels((ax1, ax2))
-plt.show()'''
+plt.show()

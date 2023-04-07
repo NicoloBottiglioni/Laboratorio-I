@@ -1,0 +1,28 @@
+Larghezza bandierina metallica (calibro ventesimale) --------->    W= 19.25 /pm 0.05 mm
+Velocità della baniderina: V_b= W/t_t
+
+
+
+(le seguenti misure sono prese con il metro a nastro e quindi hanno risoluzione 0.0001 metri)
+     Distanza tra la superficie inferiore della trave al pujnto di sospensione------> 125 cm \pm 0.1 cm
+     spessore della trave di legno di base ------------->  2
+     Distanza dalla superficie superiore della trave all'apice del coso di metallo --------> 8,6 cm
+     Distanza punto di sospenzione alla cime del parallelepipedo di legno : 112 cm
+
+
+(la seguente distanza è stata presa con il calibro ventesimale)
+     Distanza dalla cima del supporto alla fotocellula -----------> 4,80 /p, 0.05 mm 
+     Altezza del parallelipedo di legno   33.90 /pm 0.05 mm
+
+
+PRIMA PARTE: Fittare i punti di velocità nel punto più basso con una legge esponenziale. 
+
+
+Seconda parte: fittare il periodo in funzione dell'ampiezza di oscillazione
+(più è grande l'oscillazione, più posso vedere i termini dello sviluppo del periodo)
+
+NOTA: il fit con lo sviluppo del periodo, dato che è un polinomio moltiplicato per un coefficiente arbitrario, la macchina mi rifiuta di farlo perchè le grandezze hanno correlazione -1. In questo caso, il CHi avrebbe infiniti minimi. Per ovviare al problema, fisso la costante moltiplicativa e fitto il polinomio moltiplicato con questa costante.
+
+
+
+

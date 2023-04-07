@@ -27,7 +27,9 @@ print('INDICE DI RIFRAZIONE:', na_hat, dna, 'INTERCETTA:', q_hat, dq)
 err_rel_n = dna/na_hat
 print('ERRORE RELATIVO INDICE RIFRAZIONE:', err_rel_n)
 
-res= y - line(x, n_hat, q_hat)
+
+#residui normalizzati
+res= (y - line(x, n_hat, q_hat))/dy
 
 
 
@@ -67,6 +69,6 @@ ax2.set_ylabel('Residui [quadretti.]')
 ax2.grid(color='lightgray', ls='dashed')
 
 # The final touch to main canvas :-)
-plt.ylim(-4.0, 4.0)
+plt.ylim(-2.1, 3.0)
 fig.align_ylabels((ax1, ax2))
 plt.show()

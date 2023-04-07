@@ -48,9 +48,10 @@ print(m_hat, sigma_m, 'potere diottrico 1/f:', Q_hat, sigma_Q)
 #Procediamo alla costruzione del nostro grafico
 fig=plt.figure('focale di una divergente', figsize=(10., 6.), dpi=100)
 ax1, ax2 = fig.subplots(2, 1, sharex=True, gridspec_kw=dict(height_ratios=[2, 1], hspace=0.05))
-res= y - line(x, m_hat, Q_hat)
+#Residui normalizzati, cioè divisi per l'errore
+res= (y - line(x, m_hat, Q_hat))/dy
 
-ax1.errorbar(x, y, dy, dx, fmt='.', label='punti sperimentali', color='blue')
+ax1.errorbar(x, y, dy, dx, fmt='.', label='punti sperimentali')
 
 ax1.plot(x, line(x, *popt), label='Modello di best-fit', color='orange')
 # Setup the axes, grids and legend.
@@ -58,7 +59,7 @@ ax1.set_ylabel('1/q [m^-1]')
 ax1.grid(color='lightgray', ls='dashed')
 ax1.legend()
 # And now the residual plot, on the bottom panel.
-ax2.errorbar(x, res, dy, fmt='.', color='blue')
+ax2.errorbar(x, res, dy, fmt='.')
 # This will draw a horizontal line at y=0, which is the equivalent of the best-fit
 # model in the residual representation.
 ax2.plot(x, np.full(x.shape, 0.0), color='orange')
@@ -77,3 +78,4 @@ print(f'Chi quadro = {chisq :.1f}')
 X= np.sqrt(16)
 print('Chisq atteso', 8, '+/-', X)
 plt.show()
+

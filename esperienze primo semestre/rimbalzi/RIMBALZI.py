@@ -45,4 +45,4 @@ plt.grid(which= 'both', ls='dashed', color='grey')
 plt.xlabel('Rimbalzo')
 plt.ylabel('Residui')
 plt.show()
-1.192 0.015  0.705 0.003
+#1.192 0.015  0.705 0.003

@@ -7,7 +7,7 @@ def fit_model(pars, x):
     return pars[0] * x + pars[1]
 
 # Read the data from file.
-x, y = np.loadtxt(r"C:\Users\ACER\OneDrive\Desktop\Laboratorio I\esperienze-secondo-semestre\rifrazione_plexiglass_e_focale_lente_divergente_\Dati_rifrazione_plexiglass.txt", unpack=True)
+x, y = np.loadtxt(r"C:\Users\ACER\OneDrive\Desktop\Laboratorio I\esperienze-secondo-semestre\OTTICA\rifrazione_plexiglass_e_focale_lente_divergente_\Dati_rifrazione_plexiglass.txt", unpack=True)
 dx= np.full(x.shape, 1) #quadretti
 dy= np.full(y.shape, 1) #quadretii
 # Run the actual ODR.
@@ -46,12 +46,12 @@ ax1, ax2 = fig.subplots(2, 1, sharex=True, gridspec_kw=dict(height_ratios=[2, 1]
 
 ax1.errorbar(x, y, dy, dx, fmt='.', label='punti sperimentali', color='darkslateblue')
 ax1.plot(x, fit_model(out.beta, x), label='Modello di best-fit', color='lightsteelblue')
-ax1.set_ylabel('1/q [m]')
+ax1.set_ylabel('Distanza normale - raggio incidente [quadretti]')
 ax1.grid(color='lightgray', ls='dashed')
 ax1.legend()
 ax2.errorbar(x, res, dy, fmt='.',  color='darkslateblue')
 ax2.plot(x, np.full(x.shape, 0.0), color='lightsteelblue')
-ax2.set_xlabel('1/p [m]')
+ax2.set_xlabel('Distanza normale - raggio rifratto [quadretti]')
 ax2.set_ylabel('Residui [a. u.]')
 ax2.grid(color='lightgray', ls='dashed')
 #plt.ylim(-4.0, 4.0)

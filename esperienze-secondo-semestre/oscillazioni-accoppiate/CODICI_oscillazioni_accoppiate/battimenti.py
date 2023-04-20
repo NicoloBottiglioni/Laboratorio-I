@@ -99,4 +99,4 @@ chisqB= np.sum((((yB - battimenti(xB, *poptB))/dyB)**2))
 print(f'Chisq B = {chisqB:.1f}')
 print('Chisq atteso B', 1469, '\pm', XB)
 
-#plt.show()
+plt.show()

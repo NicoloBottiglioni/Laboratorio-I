@@ -59,4 +59,7 @@ ax2.grid(color='lightgray', ls='dashed')
 plt.ylim(-12, 14)
 plt.xlim(26, 28.5)
 fig.align_ylabels((ax1, ax2))
+#fig2= plt.figure('residui 2')
+#plt.errorbar(res[::3], x[::3], dx[::3], fmt='.')
+#plt.plot
 plt.show()

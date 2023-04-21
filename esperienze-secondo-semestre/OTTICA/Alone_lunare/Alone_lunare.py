@@ -73,20 +73,29 @@ plt.grid()
 plt.gca().set_aspect('equal')
 
 #------------------------------------------------------------------------------------------------------------------------------------------
-'''#residui in coordinate polari
-res= np.sqrt((x_c - x)**2 + (y_c - y)**2) -r
+#residui in coordinate polari
+res= r - np.sqrt((x_c - x)**2 + (y_c - y)**2)
 
 PHI= np.arcsin(np.abs(y-y_c)/(np.sqrt((x_c - x)**2 + (y_c - y)**2)))
-for [i] in range ():
 
+if (x_c < x and y_c < y):
+    PHI=  np.arcsin(np.abs(y-y_c)/(np.sqrt((x_c - x)**2 + (y_c - y)**2)))
 
-sommainquadratura= np.sqrt(2*sigma**2)
+elif x_c > x and y_c < y:
+    PHI=  np.pi/2 + np.arcsin(np.abs(y-y_c)/(np.sqrt((x_c - x)**2 + (y_c - y)**2)))
+
+elif x_c > x and y_c > y:
+    PHI=  np.pi + np.arcsin(np.abs(y-y_c)/(np.sqrt((x_c - x)**2 + (y_c - y)**2)))
+
+else: 
+    PHI=  3*np.pi/2 + np.arcsin(np.abs(y-y_c)/(np.sqrt((x_c - x)**2 + (y_c - y)**2)))
+
 fig2= plt.figure('Residui_alone_lunare')
-plt.errorbar(PHI, res, sommainquadratura, fmt='.', color='tomato')
+plt.errorbar(PHI, res, sigma, fmt='.', color='tomato')
 plt.plot(PHI, np.full(PHI.shape, 0.0), color='chartreuse')
 plt.grid(color='lightgray', ls='dashed')
 plt.xlabel('Angolo campionamenti-orizzontale [$\circ$]')
-plt.ylabel('Residui [pixel]')'''
+plt.ylabel('Residui [pixel]')
 #----------------------------------------------------------------------------------------------------------------
 #coordinate delle due stelle in pixel
 '''Posizione di Spica: 606 - 529   \pm 3'''

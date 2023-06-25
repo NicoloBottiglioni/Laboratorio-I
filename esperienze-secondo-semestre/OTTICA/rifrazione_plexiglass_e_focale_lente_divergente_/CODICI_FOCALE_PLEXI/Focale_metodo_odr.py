@@ -8,7 +8,7 @@ def fit_model(pars, x):
 
 p = np.array([-6.48, -8.57, -10.08, -11.51, -12.77, -13.34, -14.23, -14.67, -15.08, -15.30])/100  #metri
 q = np.array([9.66, 17.21, 18.13, 25.81, 33.59, 40.55, 44.48, 52.29, 58.00, 60.24])/100 #metri
-sigma_p = np.full(p.shape, 0.5)/100 #cm
+sigma_p = np.full(p.shape, 0.5)/100 
 sigma_q = np.full(q.shape, 1.00)/100
 
 

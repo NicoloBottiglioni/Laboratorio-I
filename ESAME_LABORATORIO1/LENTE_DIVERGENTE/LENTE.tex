@@ -1,0 +1,100 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, top=1cm, bottom=2cm, left=1.5cm,right=1.5cm, marginparwidth=1.75cm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{siunitx}
+
+\title{Potere diottrico di una lente divergente}
+
+\begin{document}
+	\author{Nicolò Bottiglioni}
+	\date{3 Luglio 2023}
+	\maketitle
+	\section{Obiettivi}
+	L'obiettivo dell'esperienza è misurare, a partire da delle misurazioni della distanza della sorgente, virtuale, e dell'immagine dalla lente divergente, il potere diottrico della stessa.
+	\section{Apparato Sperimentale}
+	Il materiale a disposizione era il seguente.
+	\begin{enumerate}
+		\item metro a nastro di risoluzione 1 mm;
+		\item set di lenti convergenti e divergenti di diverso potere diottrico;
+		\item banco ottico dotato di una sorgente luminosa;
+		\item schermo sul quale poter catturare le immagini;
+	\end{enumerate}
+	\vspace*{1em}
+	L’apparato consisteva in una sorgente di luce sulla quale è stato posizionato uno schermo con un foro triangolare, in
+	modo da creare un’immagine che avesse tale forma geometria. A disposizione c’ era anche un set di lenti,
+	divergenti e convergenti, di diverso potere diottrico e uno schermo sul quale poter catturare l’immagine prodotta
+	dalle lenti. Ciascuno di questi componenti era libero di essere fissato a piacere lungo il banco ottico.
+	
+	\section{Misure effettuate}
+	La lente convergente è stata posizionata di fronte alla sorgente e successivamente è stato posizionato sul banco ottico lo schermo. Dopo averlo posto a una distanza tale da fare in modo che l'immagine su di esso fosse a fuoco e dopo essersi segnato quest'ultima posizione con un leggero segno a matita sul banco ottico in modo da ottenere misure che fossero il più consistenti possibile, è stata posizionata la divergente tra lo schermo e la convergente. La distanza schermo-divergente corrisponde alla grandezza $p$, ovvero la distanza dalla lente della sorgente, dal momento che l'immagine della lente convergente fa le veci di una sorgente virtuale per la divergente. Quest'ultima grandezza è da prendere con il segno negativo. Dopodiché si allontana lo schermo dalla divergente finché l'immagine su quest'ultimo non risulterà essere a fuoco. A questo punto è stata misurata la nuova distanza schermo - divergente, la quale corrisponde alla grandezza $q$, ovvero la distanza dalla lente dell'immagine prodotta. 
+	Sono state misurate dieci coppie di dati $(p_{i};q_{i})$, riportate nella seguente tabella.
+	\vspace*{1em}
+	\begin{center}
+	\begin{tabular}{cc}
+		\hline
+	p $\pm \frac{1}{\sqrt{12}}$  \quad [cm]	& q $\pm$ 0,8 \quad [cm] \\ %XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+		\hline
+	dsb	& db \\
+	dsb	&dsfb  \\
+	sdb	&sdb  \\
+	dsb	& dsfb \\
+	dsfb	& dfb \\
+	sdb	&  dfb\\
+	dbf	& dfb \\
+	db	& dfb \\
+	dsfb	&sdf  \\
+	dfb	&  dfbf\\
+		\hline
+	\end{tabular}
+    \end{center}
+    \vspace{1em}
+    XXXXX ATTENZIONE AI NUMERI XXXXX
+    Le incertezze, rispettivamente su $p$ e $q$, riguardano il fatto che il centro della lente si trova in un punto non ben definito all'interno della ghiera della stessa e che l'immagine sullo schermo risulta essere a fuoco anch'essa non in un punto ben definito, ma bensì in un intervallo. A causa di ciò, per quanto riguarda le incertezze di misura si è proceduto nel modo seguente.
+    Si è assunto che la grandezza $p$ fosse distribuita uniformemente nell'intervallo di ampiezza pari allo spessore della ghiera, per cui come valore centrale della misura si è presa la distanza schermo - punto medio ghiera e come incertezza è stata presa la deviazione standard della distribuzione uniforme nell'intervallo di ampiezza pari allo spessore della ghiera, ovvero $\frac{spessore ghiera}{\sqrt{12}} \quad [cm]$.
+    Per quanto riguarda l'incertezza su $q$, è stata riscontrata una certa difficoltà nel determinare con precisione l'intervallo entro il quale l'immagine sullo schermo risultasse a fuoco, quindi non è stato possibile determinare un potenziale intervallo di variabilità entro il quale $q$ fosse distribuita uniformemente. Nonostante ciò, è stato comunque osservato che l'immagine risultava a fuoco entro un intervallo di circa 1,50 $\sim$ 2,00 [cm]. A causa di ciò si è preferito associare un errore, molto probabilmente sovrastimato, il quale è riportato nella tabella sopra. 
+    
+    Infine, è bene specificare che nell'esperienza è stata utilizzata una lente divergente di potere diottrico -5 e una lente convergente di potere diottrico +10.
+    
+    
+	\section{Analisi dei dati}
+	E' stato eseguito un fit dei dati, tramite l'algoritmo ODR, con la legge dei punti coniugati per una lente:
+	\begin{equation}
+	\frac{1}{q} = \frac{1}{p} + \frac{1}{f} \quad.
+	\end{equation}
+	
+	Il modello è lineare e in quest'ultimo l'intercetta corrisponde alla grandezza di interesse, ovvero il potere diottrico. I valori attesi per l'intercetta e il coefficiente angolare sono rispettivamente $m=1$ e $q= \frac{1}{f} = -5$.
+	E' stato eseguito un fit ODR perchè dal momento che le incertezze delle grandezze $p_{i}$ non erano trascurabili.
+	Di seguito sono riportati sia il grafico di best-fit, sia i parametri stimati. 
+	
+	\begin{center}
+		
+    GRAFICO
+    \end{center}
+	
+	\begin{center}
+	\begin{tabular}{cc}
+		\hline
+		Parametro & Valore stimato \\
+		\hline
+	m	&  XXX\\
+	$\frac{1}{f}$	& XXX \\
+		\hline
+	\end{tabular}
+	\end{center}
+	
+	\section{Conclusioni }
+	Notiamo che i parametri stimati attraverso il fit XXXXXXX compatibili con i valori attesi e riportati nella tabella sopra. Per quanto riguarda il test del $\chi^{2}$, il valore ottenuto mediante il fit è il seguente : $XXXXXXXXXXXX$.
+    Tale valore è un numero rappresentativo della distanza complessiva dei punti sperimentali dal modello, ma non può essere confrontato con il valore atteso $\chi^{2} = 8 = \nu$, con $\nu$ gradi di libertà, dal momento che, essendo che nel fit rientrano i reciproci delle grandezze misurate ed essendo che questi ultimi in generale non sono distribuiti nè uniformemente nè gaussianamente, il $\chi^{2}$ non è distribuito come un Chi quadro e la sua varianza non è ignota.
+\end{document}

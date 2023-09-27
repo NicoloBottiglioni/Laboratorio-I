@@ -1,0 +1,92 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, top=1cm, bottom=2cm, left=1.5cm,right=1.5cm, marginparwidth=1.75cm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{siunitx}
+
+\begin{document}
+	\title{Densità}
+	\author{Nicolò Bottiglioni}
+	\date{3 Luglio 2023}
+	\maketitle
+	
+	\section{Obiettivo}
+	Partendo dalla misurazione delle masse e dei volumi di solidi di ottone, l'obiettivo è stimare la densità del materiale stesso. Infine, con quest'ultima misura, si è misurato il volume di un ulteriore solido in modo da confrontare quest'ultimo con il valore misurato direttamente.
+	
+	\section{Apparato sperimentale}
+	Il materiale a disposizione era il seguente.
+	\begin{itemize}
+	\item Calibro ventesimale di risoluzione 0.05 mm;
+	\item Calibro cinquantesimale di risoluzione 0.02 mm;
+	\item Calibro Palmer di risoluzione 0.001 mm;
+	\item Bilancia di precisione di risoluzione 0.001 g;
+	\item Set di solidi di ottone;
+	\end{itemize}
+	
+	\section{Misure effettuate}
+	Per ciascun solido, sono state misurate le opportune dimensioni al fine di calcolarne il volume. Prima di fare ciò, è stato verificato che il calibro Palmer, ventesimale e cinquantesimale fossero calibrati. Successivamente la massa di ciascun solido è stata misurata con la bilancia di precisione. Per le misurazioni, si è assunto che i solidi fossero regolari entro la risoluzione strumentale dello strumento la cui lettura non presentasse fluttuazioni. In particolare, le altezze sono state misurate con il Palmer, tranne quelle dei solidi con un altezza troppo grande per esssere misurata, appunto, con tale strumento. Le altre grandeze, quali apotemi, diametri etc. sono state misurate con il calibro cinquantesimale. Inoltre, si è anche assunto che la massa e le dimensioni dei solidi fossero distribuite uniformemente nell'intervallo di ampiezza pari alla risoluzione dello strumento utilizzato per eseguire la misura. Come incertezza, dunque, si è utilizzata la deviazione standard $\frac{risoluzione}{\sqrt{12}} \quad [u.d.m.]$. Inoltre, è bene sottolineare come la bilancia di precisione non presentasse un errore di zero, dal momento che, senza che vi fosse posizionata alcuna massa sopra, essa restituiva una lettura pari a $0.000 \quad	[g]$. 
+	
+    \section{Analisi dati}
+	E' stato eseguito un fit dei minimini quadrati con un modello lineare del tipo $y=mx+q$, data la legge che lega volume e massa di un solido di un materiale di densità $\rho$:
+	\vspace{1em}
+	\begin{equation}
+		V=\frac{m}{\rho} \quad [m^{3}]
+	\end{equation}
+	\vspace{1em}
+	Stando a quest'ultima legge, si ha che il parametro m è l'inverso della de densità del materiale, mentre l'intercetta q dovrebbe essere compatibile con lo zero.
+	Effettuando un primo fit, ci si rende conto che qualcosa è andato chiaramente storto, probabilmente a causa di gravi errori di calcolo durante la misura del volume di un solido in particolare. Riportiamo di seguito il quest'ultimo fit.
+	
+\begin{center}
+	\includegraphics[width=0.6\linewidth]{../../../Densità1}
+\end{center}
+	\vspace{1em}
+	Rimuovendo il punto sul quale si sono chiaramente commessi errori, si ottiene il seguente risultato. Riportiamo anche i parametri stimanti medianti il seguente fit
+	
+\begin{center}
+	\includegraphics[width=0.6\linewidth]{"../../../densità 2"}
+\end{center}
+	\begin{center}
+		\begin{tabular}{cc}
+			\hline
+		Parametro	& Valore stimato  \\
+			\hline
+		intercetta	& (-1.1 $\pm$1.2)$\cdot10^{-7}$\\
+		$\rho$	&8008.5 $\pm$371.6 $\frac{kg}{m^{3}}$ \\
+		$\chi^{2}$	& 309.1 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\vspace{1em}
+
+	\vspace{1em}
+	E' da specificare che non è stato realizzato un grafico della massa in funzione del volume a causa del fatto che, in tal caso, l'incertezza sulle misure di volume non sarebbe stata trascurabile mentre, realizzando il grafico come sopra, si ha che l'incertezza delle masse è effettivamente trascurabile.
+	
+\section{Conclusioni}
+Di seguito si riportano i valori del volume del solido aggiuntivo 
+\vspace{1em}
+\begin{center}
+	\begin{tabular}{cc}
+		\hline
+	Volume misurato direttamente $[m^{3}]$	& Volume misurato indirettamente $[m^{3}]$ \\
+		\hline
+	(418.4 $\pm 1,7)\cdot10^{-8} [m^{3}]$	& (436.52 $\pm 0.05)\cdot10^{-8} [m^{3}] $ \\
+		\hline
+	\end{tabular}
+\end{center}
+\vspace{1em}
+Notiamo che i due valori non sono compatibili. Questa è una conseguenza di diversi fattori. In primo luogo, l'errore maggiore che ha contribuito ai pessimi risultati dell'esperienza è sicuramente l'aver commesso alcuni errori nella lettura degli strumenti.
+Il valore tabulato della densità dell'ottone vale $8400 \sim 8700 \frac{kg}{m^{3}}$, quindi notiamo che la nostra stima è fuori di poco più di una barra d'errore.
+Il valore numerico ottenuto per il $\chi^{2}$ è un'indicazione della distanza complessiva dei punti dal modello e, anche in questo caso in cui il volume non è nè distribuito gaussianamente nè quadrato di una variabile uniforme, si ha che è in media pari al numero di gradi di libertà, i quali sono 2 nel caso in questione, dato che abbiamo scartato un punto sperimentale.
+Il $\chi^{2}$ non è però distribuito come un chiquadro a causa della distribuzione non gaussiana del volume e ciò comporta l'impossibilità di determinare la compatibilità o meno del valore ottenuto con quello atteso, dal momento che non si conosce la varianza del $\chi^{2}$.
+\end{document}

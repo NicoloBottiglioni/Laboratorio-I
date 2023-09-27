@@ -1,0 +1,127 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, top=1cm, bottom=2cm, left=1.5cm,right=1.5cm, marginparwidth=1.75cm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{siunitx}
+
+\begin{document}
+	\author{Nicolò Bottiglioni}
+	\title{Indice di rifrazione del plexiglass}
+	\date{3 Luglio 2023}
+	\maketitle
+	
+	\section{Obiettivi}
+	L'obiettivo dell'esperienza è quello di misurare l'indice di rifrazione del plexiglass a partire dalle misurazioni dell'angolo di incidenza e di rifrazione di un raggio luminoso incidente sulla superficie piana del plexiglass e sfruttando la legge di Snell-Cartesio:
+	
+	\begin{equation}
+		 n_1sin\theta_i = n_2sin\theta_r \quad.
+	\end{equation}
+	 
+	\section{Apparato sperimentale}
+	L'apparato consiste in  un supporto per il semicilindro di plexiglass, una sorgente luminosa con un diaframma a fenditura che permette di creare un fascio di luce sottile, una lente convergente posizionata di fronte alla sorgente e un foglio circolare quadrettato sul quale sono evidenziati due diametri ortogonali della circonferenza.
+	Il foglio è stato posizionato sul supporto e, grazie sia ai quadretti sia ai diametri ortogonali evidenziati, è stato possibile posizionare il solido di plexiglass in modo che il fascio di luce proveniente dalla sorgente incidesse nel centro della sua superficie piana. Prima di cominciare con le misurazioni, è stata regolata la distanza del supporto per il semicilindro dalla sorgente di luce in modo che il raggio incidente fosse il più sottile possibile.
+	
+	\section{Misure effettuate}
+	Sono state misurate le distanze della normale al piano di incidenza rispettivamente del raggio incidente e del raggio rifratto. 
+	Le coppie di misure effettuate sono state dunque, detto $R$ il raggio della circonferenza e $\theta_i$ e $\theta_r$ gli angoli di incidenza e rifrazioni, le seguenti.
+	\vspace*{1em}
+	\begin{center}
+	\begin{tabular}{cc}
+		\hline
+	$Rsin\theta_r \pm \frac{1}{\sqrt{12}}  \quad [quadretti]$ & $Rsin\theta_i \pm \frac{1}{\sqrt{12}} \quad [quadretti]$ \\
+		\hline
+		&  \\
+		&  \\
+		&  \\
+		&  \\
+		&  \\
+		&  \\
+		&  \\
+		&  \\
+		&  \\
+		&  \\
+		\hline
+	\end{tabular}
+    \end{center}
+    \vspace*{1em}
+    
+    Nelle misurazioni, la carta quadrettata ha svolto le veci di una sorta di metro a nastro di risoluzione pari ad un quadretto. Si è assunto quindi che le grandezze misurate fossero distribuite uniformemente in un intervallo di ampiezza pari ad un quadretto e, come incertezza di misura, è stata di conseguenza associata ad entrambe le misure $\frac{1}{\sqrt{12}} \quad[quadretti]$.
+    
+	\section{Analisi dati}
+	A partire dalla $(1)$, si può esplicitare $sin\theta_i$ in funzione di $sin\theta_r$. Nel caso delle nostre misure:
+	\vspace{1em}
+	\begin{equation}
+		n_1Rsin\theta_i=n_2Rsin\theta_r \quad\quad[quadretti]
+	\end{equation}
+	\begin{equation}
+		sin\theta_i=\frac{n_2}{n_1}sin\theta_r \quad\quad[quadretti]
+	\end{equation}
+	\vspace{1em}
+	Rispettivamente, $n_{1}$ e $n_{2}$ rapprsentano l'indice di rifrazione dell'aria e del plexiglass.
+	E' stato eseguito un fit tramite l'algoritmo odr con un modello lineare, ottenendo il seguente risultato. 
+	
+	XXXXXX FIGURA XXXXXX
+	
+	
+	Il fit tramite l'algoritmo odr è stato utilizzato perché l'incertezza sulla misura della distanza tra asse e raggio rifratto non è trascurabile.
+	\\
+	\\
+	Inoltre, per quest'esperienza è stato assunto $n_1=1$, con $n_1$ indice di rifrazione dell'aria. L'effettivo valore dell'indice di rifrazione è, invece, circa $n_1=1,000294$. Con tale approssimazione si è introdotto un errore relativo pari a $ 3\cdot 10^{-4}$. Grazie a quest'approssimazione, il valore stimato dal fit per il coefficiente angolare coincide con il valore dell'indice di rifrazione del plexiglass.
+	
+	\section{Conclusioni}
+	Il modello matematico utilizzato per il fit è quello di una retta, del tipo $y=mx+q$, come espresso dalla $(3)$. Stando a quest'ultima, i valori attesi per $n_2$, $q$ e $\chi^2$ dovrebbero essere i seguenti.
+	
+	\vspace{1em}
+	
+	\begin{center}
+		\begin{tabular}{cc}
+			\hline
+			Grandezze & Valori attesi\\
+			\hline
+			$n_2$ & 1.48 \\
+			$q$ &  0 \\
+			$\chi^2$ &  8 $\pm$ 2.5 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\vspace{1em}
+	
+	Riportiamo di seguito i valori stimati tramite il fit.
+	
+	\vspace{1em}
+	
+	\begin{center}
+		\begin{tabular}{cc}
+			\hline
+			Grandezze & Valori stimati \\
+			\hline
+			$n_2$ & $  \pm$  \\
+			$q$ & $ \pm$  \\
+			$\chi^2$ & $$ \\
+			\hline
+			
+		\end{tabular}
+	\end{center}
+	
+	\vspace{1em}
+	
+Notiamo che l'errore relativo sulla misura dell'indice di rifrazione del plexiglass è pari a $\frac{\sigma_{n_2}}{n_2} = XXXXX$. Essendo quest'ultima molto maggiore dell'errore relativo introdotto dall'approssimazione $n_{aria}=1$, l'approssimazione stessa è giustificata.
+
+La misura ottenuta dell'intercetta risulta essere compatibile con lo zero, XXXXX.
+
+Il valore del $\chi^{2}$ invece è/non è  XXXX compatiibile con il valore atteso. Va specificato che nel contesto di questo esperimento, il $\chi^{2}$ non è distribuito come un Chi quadro dal momento che esso è la somma di quadrati di variabili distribuite uniformemente e non di quadrati di variabili gaussiane. Pertanto, in questo caso il valore atteso del $\chi^{2}$ rimane comunque pari al numero di gradi di libertà $\nu = 10 - 2 = 8$, mentre la sua varianza è pari a $\frac{4\nu}{5}= \frac{32}{5}$, dove 4/5 è la varianza del quadrato di una variabile distribuita uniformemente, e di conseguenze la sua deviazione standard è $\sim 2,5$.
+	
+
+\end{document}
